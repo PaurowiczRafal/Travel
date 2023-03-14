@@ -72,6 +72,77 @@ body {
 	}
 }
 
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: colors.$blue-gradient-solid;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: colors.$pure-white;
+		text-decoration: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+			background-color: colors.$pure-white;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.3s;
+			background-color: colors.$pure-white-transparent;
+		}
+		&:hover::before {
+			transform: scaleY(1);
+		}
+		&:hover::after {
+			transform: scaleX(1);
+			transition-delay: 0.2s;
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
 /* HEADER */
 .header {
 	position: relative;
@@ -115,6 +186,8 @@ body {
 // MEDIA
 // ========================
 
+@media (min-width: 576px) {
+}
 @media (min-width: 768px) {
 	.white-block {
 		height: 50px;
@@ -132,13 +205,22 @@ body {
 			font-size: 1.6rem;
 		}
 	}
+	// .nav {
+	// 	height: 30vh;
+	// 	width: 40vw;
+	// 	transform: translateX(250%);
+	// 	&--active {
+	// 		transform: translateX(150%);
+	// 		border-bottom-left-radius: 15px;
+	// 	}
+	// }
 }
 @media (min-width: 992px) {
 	.burger-btn {
 		top: 50px;
 		right: 50px;
 	}
-	.header{
+	.header {
 		background-image: colors.$blue-gradient, url(../img/header/header-big.jpg);
 		.header {
 			&__heading {
