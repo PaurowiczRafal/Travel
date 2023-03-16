@@ -1,7 +1,9 @@
 $main-color: #1755e7;
 $secondary-color: #164dcc;
-$pure-white: #efefef;
-$light-white: #eee;
+$pure-white: #fff;
+$white-text: #efefef;
+$black-text: #1a1a1a;
+$light-white: #e1e1e1;
 $dark: #2e2e2e;
 $green-color: #00ffaa;
 $green-color-hover: #0fe29c;
@@ -12,4 +14,4 @@ $purple-gradient: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 2
 $blue-gradient-solid: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
 $light-blue-gradient-solid: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
 
-$pure-white-transparent: rgba(239, 239, 239, .1);
+$pure-white-transparent: rgba(239, 239, 239, 0.1);
